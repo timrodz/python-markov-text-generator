@@ -7,12 +7,12 @@ def create_text_body(input_filename) -> list:
     print(f"Creating body from file {input_filename}")
     text_body = []
     with open(input_filename, "r") as input_file:
-        for tweet_object in input_file:
-            tweet_json = json.loads(tweet_object)
-            tweet_body = tweet_json.get("full_text", "")
-            if "\n" in tweet_body:
-                tweet_body.replace("\n", " ")
-            text_body.append(tweet_body)
+        for text_object in input_file:
+            text_json = json.loads(text_object)
+            body = text_json.get("full_text", "")
+            if "\n" in text:
+                body.replace("\n", " ")
+            text_body.append(body)
     print("Body creation complete")
     return text_body
 
