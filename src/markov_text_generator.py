@@ -10,7 +10,7 @@ def create_text_body(input_filename) -> list:
         for text_object in input_file:
             text_json = json.loads(text_object)
             body = text_json.get("full_text", "")
-            if "\n" in text:
+            if "\n" in body:
                 body.replace("\n", " ")
             text_body.append(body)
     print("Body creation complete")
